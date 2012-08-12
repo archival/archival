@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rdf:RDF xmlns="http://purl.org/archival/vocab/eac-rels#"
-  xml:base="http://purl.org/archival/vocab/eac-rels"
+  xml:base="http://purl.org/archival/vocab/rels"
   xmlns:dc="http://purl.org/dc/elements/1.1/"
   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
   xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
@@ -10,7 +10,7 @@
   xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 
-  <owl:Ontology rdf:about="http://purl.org/archival/vocabulary/eac-rels#">
+  <owl:Ontology rdf:about="http://purl.org/archival/vocabulary/cpf-rels#">
     <dc:title>EAC-CPF Relation Ontology</dc:title>
     <dc:description>
       This document defines terms used to establish relationships between EAC-CPF entities.
