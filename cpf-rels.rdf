@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF xmlns="http://purl.org/archival/vocab/eac-rels#"
+  xml:base="http://purl.org/archival/vocab/rels"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+  xmlns:foaf="http://xmlns.com/foaf/0.1/"
+  xmlns:terms="http://purl.org/dc/terms/"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+  <owl:Ontology rdf:about="http://purl.org/archival/vocabulary/cpf-rels#">
+    <dc:title>EAC-CPF Relation Ontology</dc:title>
+    <dc:description>
+      This document defines terms used to establish relationships between EAC-CPF entities.
+    </dc:description>
+  </owl:Ontology>
+
+
+  <!-- Base classes -->
+  
+  <rdfs:Class rdf:about="http://purl.org/archival/vocabulary/cpf-rels#Entity">
+    <rdfs:label>Entity</rdfs:label>
+    <rdfs:comment>An EAC-CPF entity.</rdfs:comment>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:about="http://purl.org/archival/vocabulary/cpf-rels#cpfEntity">
+    <rdfs:label>cpfEntity</rdfs:label>
+    <rdfs:comment>A corporate body, person or family.</rdfs:comment>
+    <rdfs:subClassOf xsd:resource="http://purl.org/archival/vocabulary/cpf-rels#Entity"/>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:about="http://purl.org/archival/vocabulary/cpf-rels#Resource">
+    <rdfs:label>Resource</rdfs:label>
+    <rdfs:comment>An EAC-CPF resource.</rdfs:comment>
+    <rdfs:subClassOf></rdfs:subClassOf>
+    <rdfs:subClassOf xsd:resource="http://purl.org/archival/vocabulary/cpf-rels#Entity"/>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:about="http://purl.org/archival/vocabulary/cpf-rels#Function">
+    <rdfs:label>Function</rdfs:label>
+    <rdfs:comment>An EAC-CPF function.</rdfs:comment>
+    <rdfs:subClassOf xsd:resource="http://purl.org/archival/vocabulary/cpf-rels#Entity"/>
+  </rdfs:Class>
+  
+  
+  
+  <!-- properties -->
+  
+  <rdfs:property rdf:about="http://purl.org/archival/vocabulary/cpf-rels#hasRelation">
+    <rdfs:label>hasRelation</rdfs:label>
+    <rdfs:comment>Associates an Entity and a Relation.</rdfs:comment>
+  </rdfs:property>
+  
+  <rdfs:property rdf:about="http://purl.org/archival/vocabulary/cpf-rels#relation">
+    <rdfs:label>hasDescription</rdfs:label>
+    <rdfs:comment>Associates a Relation and its corresponding descriptive metadata (typically via a link to an information resource).</rdfs:comment>
+  </rdfs:property>
+  
+  <rdfs:property rdf:about="http://purl.org/archival/vocabulary/cpf-rels#relation">
+    <rdfs:label>relationTarget</rdfs:label>
+    <rdfs:comment>The Entity targeted by this relation.</rdfs:comment>
+    <rdfs:range rdf:resource=""/>
+  </rdfs:property>
+  
+  
+  
+  <!-- Relations -->
+  
+  <rdfs:Class rdf:about="http://purl.org/archival/vocabulary/cpf-rels#Relation">
+    <rdfs:label>Relation</rdfs:label>
+    <rdfs:comment>An EAC-CPF relation.</rdfs:comment>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:about="http://purl.org/archival/vocabulary/cpf-rels#FamilialRelation">
+    <rdfs:label>Familial Relation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/archival/vocabulary/cpf-rels#Relation"/>
+    <rdfs:comment>Super-class for relationships that exist within a family (defined broadly).</rdfs:comment>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:about="http://purl.org/archival/vocabulary/cpf-rels#ProfessionalRelation">
+    <rdfs:label>Professional Relation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/archival/vocabulary/cpf-rels#Relation"/>
+    <rdfs:comment>Super-class for relationships that exist within a professional context.</rdfs:comment>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:about="http://purl.org/archival/vocabulary/cpf-rels#EducationalRelation">
+    <rdfs:label>Educational Relation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/archival/vocabulary/cpf-rels#Relation"/>
+    <rdfs:comment>Super-class for relationships that exist within an educational context.</rdfs:comment>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:about="http://purl.org/archival/vocabulary/cpf-rels#SocialRelation">
+    <rdfs:label>Social Relation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/archival/vocabulary/cpf-rels#Relation"/>
+    <rdfs:comment>Super-class for relationships that exist within a social context.</rdfs:comment>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:about="http://purl.org/archival/vocabulary/cpf-rels#OrganizationalRelation">
+    <rdfs:label>OrganizationalRelation</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://purl.org/archival/vocabulary/cpf-rels#Relation"/>
+    <rdfs:comment>Super-class for relationships that exist within an organization.</rdfs:comment>
+  </rdfs:Class>
+  
+  
+  
+  <!-- ** Basic familial relationships ** -->
+  
+  <rdfs:Class rdf:about="http://purl.org/archival/vocabulary/cpf-rels#Parent">
+    <rdfs:label>Parent</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/archival/vocabulary/cpf-rels#FamilialRelation"/>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:about="http://purl.org/archival/vocabulary/cpf-rels#Child">
+    <rdfs:label>Child</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/archival/vocabulary/cpf-rels#FamilialRelation"/>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:about="http://purl.org/archival/vocabulary/cpf-rels#Sibling">
+    <rdfs:label>Sibling</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/archival/vocabulary/cpf-rels#FamilialRelation"/>
+  </rdfs:Class>
+  
+  <!-- Note: consider whether extended family relationships (uncle, aunt, cousin, etc.) should be explicitly defnied or established via inference. If the
+  latter, a class might be established to distinguish immediate, extended and distant famililial relationships. -->
+  
+
+  <!-- ** Qualified familial relationships ** -->
+  
+  <rdfs:Class rdf:about="http://purl.org/archival/vocabulary/cpf-rels#NaturalParent">
+    <rdfs:label>NaturalParent</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/archival/vocabulary/cpf-rels#Parent"/>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:about="http://purl.org/archival/vocabulary/cpf-rels#AdoptiveParent">
+    <rdfs:label>AdoptiveParent</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/archival/vocabulary/cpf-rels#Parent"/>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:about="http://purl.org/archival/vocabulary/cpf-rels#StepParent">
+    <rdfs:label>StepParent</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/archival/vocabulary/cpf-rels#Parent"/>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:about="http://purl.org/archival/vocabulary/cpf-rels#NaturalChild">
+    <rdfs:label>NaturalChild</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/archival/vocabulary/cpf-rels#Child"/>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:about="http://purl.org/archival/vocabulary/cpf-rels#AdoptiveChild">
+    <rdfs:label>AdoptiveChild</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/archival/vocabulary/cpf-rels#Child"/>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:about="http://purl.org/archival/vocabulary/cpf-rels#StepChild">
+    <rdfs:label>Stepchild</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/archival/vocabulary/cpf-rels#Child"/>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:about="http://purl.org/archival/vocabulary/cpf-rels#NaturalSibling">
+    <rdfs:label>NaturalSibling</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/archival/vocabulary/cpf-rels#Sibling"/>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:about="http://purl.org/archival/vocabulary/cpf-rels#HalfNaturalSibling">
+    <rdfs:label>HalfNaturalSibling</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/archival/vocabulary/cpf-rels#Sibling"/>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:about="http://purl.org/archival/vocabulary/cpf-rels#AdoptiveSibling">
+    <rdfs:label>AdoptiveSibling</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/archival/vocabulary/cpf-rels#Sibling"/>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:about="http://purl.org/archival/vocabulary/cpf-rels#StepSibling">
+    <rdfs:label>Stepsibling</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/archival/vocabulary/cpf-rels#Sibling"/>
+  </rdfs:Class>
+  
+  
+  <!-- domestic and romantic relationships -->
+  
+  <rdfs:Class rdf:about="http://purl.org/archival/vocabulary/cpf-rels#DomesticPartner">
+    <rdfs:label>DomesticPartner</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+  </rdfs:Class>
+  
+  <rdfs:Class rdf:about="http://purl.org/archival/vocabulary/cpf-rels#Spouse">
+    <rdfs:label>Spouse</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://purl.org/archival/vocabulary/cpf-rels#DomesticPartner"/>
+  </rdfs:Class>
+  
+  
+  <!-- NOTE: what classname describes a boyfriend/girlfriend-type relationship generally? Probably not RomanticPartner-->
+  <rdfs:Class rdf:about="http://purl.org/archival/vocabulary/cpf-rels#DomesticPartner">
+    <rdfs:label>RomanticPartner</rdfs:label>
+    <rdfs:comment></rdfs:comment>
+  </rdfs:Class>
+  
+  
+</rdf:RDF>
