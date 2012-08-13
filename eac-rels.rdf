@@ -23,7 +23,7 @@
 
   <!--
     CpfEntity does not have an analog in the EAC-CPF Ontology, which has 3 separate classes for person, corporate body and family.
-    Defining it as a super-calss here to easlity specify a range that includes all three.
+    Defining it as a super-class here to easlity specify a range that includes all three.
     -->
   <rdfs:Class rdf:about="http://purl.org/archival/vocabulary/cpf-rels#CpfEntity">
     <rdfs:label>CpfEntity</rdfs:label>
