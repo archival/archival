@@ -209,11 +209,10 @@
   <!-- http://purl.org/archival/vocab/arch#hasComponent -->
   
   <owl:ObjectProperty rdf:about="http://purl.org/archival/vocab/arch#hasComponent">
-    <rdfs:comment>Relates a Collection to a Component contained in it</rdfs:comment>
+    <rdfs:comment>Relates a Collection or Component to a Component contained within it</rdfs:comment>
     <rdfs:comment>Has Component</rdfs:comment>
-    <rdfs:domain rdf:resource="http://purl.org/archival/vocab/arch#Collection"/>
     <rdfs:range rdf:resource="http://purl.org/archival/vocab/arch#Component"/>
-    <owl:inverseOf rdf:resource="http://purl.org/archival/vocab/arch#inCollection"/>
+    <owl:inverseOf rdf:resource="http://purl.org/archival/vocab/arch#partOf"/>
   </owl:ObjectProperty>
   
   
@@ -221,11 +220,10 @@
   <!-- added by trevorthornton 2012-10-23 -->
   <!-- http://purl.org/archival/vocab/arch#inCollection -->
   
-  <owl:ObjectProperty rdf:about="http://purl.org/archival/vocab/arch#inCollection">
-    <rdfs:comment>Relates a Component to the Collection of which it is a part</rdfs:comment>
-    <rdfs:comment>In Collection</rdfs:comment>
+  <owl:ObjectProperty rdf:about="http://purl.org/archival/vocab/arch#partOf">
+    <rdfs:comment>Relates a Component to a higher level of arrangement (Collection or Component)</rdfs:comment>
+    <rdfs:comment>Part of</rdfs:comment>
     <rdfs:domain rdf:resource="http://purl.org/archival/vocab/arch#Component"/>
-    <rdfs:range rdf:resource="http://purl.org/archival/vocab/arch#Collection"/>
     <owl:inverseOf rdf:resource="http://purl.org/archival/vocab/arch#hasComponent"/>
   </owl:ObjectProperty>
 
